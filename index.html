@@ -1,208 +1,599 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>刘才志的个人主页</title>
-    <style>
-        /* --- 1. 全局样式 (已修改) --- */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            /* 深色背景，带有科技感的蓝色调 */
-            background-color: #1a202c;
-            color: #e2e8f0; /* 默认文字颜色改为浅灰色，确保在深色背景上可读 */
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-
-        /* --- 2. 内容容器 (已修改) --- */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            /* 内容区域使用稍亮一点的深色 */
-            background-color: #2d3748;
-            padding: 30px 40px;
-            border-radius: 12px;
-            /* 阴影效果更柔和 */
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-        }
-
-        /* --- 3. 标题样式 (已修改) --- */
-        h1 {
-            /* 标题使用亮蓝色，更醒目 */
-            color: #4299e1;
-            text-align: center;
-            border-bottom: 2px solid #4299e1;
-            padding-bottom: 10px;
-        }
-
-        h2 {
-            color: #9f7aea; /* 副标题使用紫色调 */
-            text-align: center;
-            margin-top: 0;
-        }
-
-        h3 {
-            color: #38b2ac; /* 小标题使用青色调 */
-            border-left: 4px solid #38b2ac;
-            padding-left: 15px;
-        }
-
-        /* --- 4. 链接样式 (已修改) --- */
-        a {
-            color: #90cdf4; /* 链接使用浅蓝色 */
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #4299e1; /* 鼠标悬停时颜色变深 */
-            text-decoration: underline;
-        }
-
-        /* --- 5. 图片样式 --- */
-        img {
-            display: block;
-            margin: 20px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        /* --- 6. 列表样式 --- */
-        ul, ol {
-            padding-left: 25px;
-        }
-
-        /* --- 7. 表格样式 (已修改) --- */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        table, th, td {
-            border: 1px solid #4a5568; /* 表格边框使用深灰色 */
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #4a5568; /* 表头背景色 */
-            color: #f7fafc; /* 表头文字颜色 */
-        }
-
-        /* --- 8. 表单样式 (已修改) --- */
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border: 1px solid #4a5568; /* 输入框边框使用深灰色 */
-            border-radius: 4px;
-            box-sizing: border-box;
-            background-color: #4a5568; /* 输入框背景色 */
-            color: #e2e8f0; /* 输入框文字颜色 */
-        }
-
-        input[type="submit"] {
-            background-color: #4299e1; /* 提交按钮背景色 */
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #3182ce; /* 鼠标悬停时背景色变深 */
-        }
-
-        /* --- 9. 页脚样式 --- */
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #718096; /* 页脚文字颜色更浅 */
-            font-size: 0.9em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>超级赛亚人四 - 究极的战士形态</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind 配置 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ssj4-black': '#0A0A0A',
+            'ssj4-dark': '#121212',
+            'ssj4-purple': '#7B2CBF',
+            'ssj4-purple-light': '#9D4EDD',
+            'ssj4-gold': '#FFD700',
+            'ssj4-gold-dark': '#D4AF37',
+          },
+          fontFamily: {
+            'sans': ['Noto Sans SC', 'sans-serif'],
+            'orbitron': ['Orbitron', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <!-- 自定义工具类 -->
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+      }
+      .text-shadow-lg {
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
+      }
+      .bg-gradient-ssj4 {
+        background: linear-gradient(135deg, #121212 0%, #1E1E1E 100%);
+      }
+      .glow {
+        box-shadow: 0 0 15px rgba(123, 44, 191, 0.7);
+      }
+      .glow-gold {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+      }
+      .parallax {
+        transform-style: preserve-3d;
+        perspective: 1000px;
+      }
+      .parallax-layer {
+        transform: translateZ(-50px) scale(1.05);
+      }
+    }
+  </style>
+  
+  <style>
+    body {
+      background-color: #0A0A0A;
+      scroll-behavior: smooth;
+    }
+    
+    .hero-bg {
+      background-image: url('lcz.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    
+    .power-level {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to right, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .card {
+      transition: all 0.3s ease;
+    }
+    
+    .hover {
+      transform: translateY(-10px);
+    }
+    
+    .gallery-img {
+      transition: all 0.4s ease;
+    }
+    
+    .gallery-img:hover {
+      transform: scale(1.05);
+    }
+    
+    .scroll-indicator {
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="font-sans text-gray-200">
+  <!-- 导航栏 -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300">
+    <div class="bg-ssj4-black/80 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center">
+      <div class="flex items-center">
+        <span class="text-ssj4-gold text-2xl font-bold font-orbitron tracking-wider">SUPER SAIYAN 4</span>
+      </div>
+      
+      <!-- 桌面导航 -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#about" class="text-gray-300 hover:text-ssj4-gold transition-colors">介绍</a>
+        <a href="#powers" class="text-gray-300 hover:text-ssj4-gold transition-colors">能力</a>
+        <a href="#transformation" class="text-gray-300 hover:text-ssj4-gold transition-colors">变身</a>
+        <a href="#gallery" class="text-gray-300 hover:text-ssj4-gold transition-colors">图库</a>
+      </div>
+      
+      <!-- 移动端菜单按钮 -->
+      <button id="menuBtn" class="md:hidden text-ssj4-gold focus:outline-none">
+        <i class="fa fa-bars text-xl"></i>
+      </button>
+    </div>
+    
+    <!-- 移动端导航菜单 -->
+    <div id="mobileMenu" class="hidden md:hidden bg-ssj4-dark/95 backdrop-blur-md px-6 py-4">
+      <div class="flex flex-col space-y-4">
+        <a href="#about" class="text-gray-300 hover:text-ssj4-gold transition-colors py-2">介绍</a>
+        <a href="#powers" class="text-gray-300 hover:text-ssj4-gold transition-colors py-2">能力</a>
+        <a href="#transformation" class="text-gray-300 hover:text-ssj4-gold transition-colors py-2">变身</a>
+        <a href="#gallery" class="text-gray-300 hover:text-ssj4-gold transition-colors py-2">图库</a>
+      </div>
+    </div>
+  </nav>
 
-<div class="container">
-    <h1>刘才志的个人主页</h1>
-    <h2>欢迎来到刘才志的个人主页</h2>
+  <!-- 英雄区 -->
+  <section class="hero-bg h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-ssj4-black/60"></div>
+    
+    <div class="container mx-auto px-6 md:px-12 relative z-10 text-center">
+      <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-black text-white text-shadow-lg mb-6 leading-tight font-orbitron">
+        超级赛亚人<span class="text-ssj4-gold">四</span>
+      </h1>
+      <p class="text-[clamp(1rem,3vw,1.5rem)] text-gray-200 max-w-2xl mx-auto mb-12">
+        超越极限的究极战士形态，赛亚人潜力的终极展现
+      </p>
+      <div class="flex justify-center space-x-6">
+        <a href="#about" class="px-8 py-3 bg-ssj4-purple hover:bg-ssj4-purple-light text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 glow">
+          了解更多
+        </a>
+        <a href="#gallery" class="px-8 py-3 bg-transparent border-2 border-ssj4-gold text-ssj4-gold hover:bg-ssj4-gold/10 font-bold rounded-full transition-all duration-300 transform hover:scale-105">
+          查看图库
+        </a>
+      </div>
+    </div>
+    
+    <!-- 滚动指示器 -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+      <i class="fa fa-chevron-down text-2xl text-ssj4-gold/80"></i>
+    </div>
+    
+    <!-- 装饰元素 -->
+    <div class="absolute top-1/4 right-10 w-40 h-40 rounded-full bg-ssj4-purple/20 blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/3 left-10 w-60 h-60 rounded-full bg-ssj4-gold/10 blur-3xl animate-float" style="animation-delay: 2s;"></div>
+  </section>
 
+  <!-- 关于超级赛亚人四 -->
+  <section id="about" class="py-24 bg-gradient-ssj4 relative overflow-hidden">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-white mb-4">关于超级赛亚人四</h2>
+        <div class="w-24 h-1 bg-ssj4-gold mx-auto mb-8"></div>
+        <p class="text-gray-400 max-w-3xl mx-auto">
+          超级赛亚人四是赛亚人超越传统超级赛亚人形态的全新境界，首次出现在龙珠GT中。这一形态展现了赛亚人最原始的力量和野性。
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="parallax">
+          <img src="lcz.jpg" alt="超级赛亚人四" class="rounded-xl shadow-2xl w-full animate-float" style="animation-delay: 1s;">
+        </div>
+        
+        <div>
+          <h3 class="text-2xl font-bold text-ssj4-gold mb-6">形态特征</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-ssj4-purple mt-1 mr-3"></i>
+              <span>黑色长发，红色眼眶，全身覆盖红色皮毛，这是与其他超级赛亚人形态最明显的区别</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-ssj4-purple mt-1 mr-3"></i>
+              <span>力量远超超级赛亚人三，是赛亚人原始力量与超级赛亚人力量的完美结合</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-ssj4-purple mt-1 mr-3"></i>
+              <span>需要先变成大猩猩形态，然后恢复理智才能达到的特殊变身</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-ssj4-purple mt-1 mr-3"></i>
+              <span>能量消耗巨大，但战斗力提升也是前所未有的</span>
+            </li>
+          </ul>
+          
+          <div class="mt-10 flex items-center">
+            <div class="w-16 h-16 rounded-full bg-ssj4-purple/20 flex items-center justify-center mr-4">
+              <i class="fa fa-bolt text-2xl text-ssj4-gold"></i>
+            </div>
+            <div>
+              <p class="text-gray-400">战斗力</p>
+              <p class="power-level text-3xl font-bold">无法测量</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 装饰背景 -->
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-ssj4-purple/5 blur-3xl -z-10"></div>
+  </section>
 
-    <h3>关于我</h3>
-    <img src="lcz.jpg" alt="刘才志的照片" width="150">
-    <p>大家好!我叫刘才志,今年22岁,是一名大数据专业的学生｡</p>
-    <p>我喜欢动漫、音乐和乒乓球｡我的座右铭是:"人生在世，及时行乐｡"</p>
+  <!-- 能力部分 -->
+  <section id="powers" class="py-24 bg-ssj4-dark relative">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-white mb-4">超凡能力</h2>
+        <div class="w-24 h-1 bg-ssj4-gold mx-auto mb-8"></div>
+        <p class="text-gray-400 max-w-3xl mx-auto">
+          超级赛亚人四形态拥有令人难以置信的强大能力，每一项都足以改变战局
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 能力卡片1 -->
+        <div class="card bg-ssj4-black/50 backdrop-blur-sm rounded-xl p-6 border border-ssj4-purple/30 hover:border-ssj4-purple/60">
+          <div class="w-14 h-14 rounded-full bg-ssj4-purple/20 flex items-center justify-center mb-6">
+            <i class="fa fa-bolt text-2xl text-ssj4-gold"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">超爆发能量</h3>
+          <p class="text-gray-400">
+            能够释放出远超普通超级赛亚人形态的能量，形成强大的能量波和冲击波，足以毁灭行星。
+          </p>
+        </div>
+        
+        <!-- 能力卡片2 -->
+        <div class="card bg-ssj4-black/50 backdrop-blur-sm rounded-xl p-6 border border-ssj4-purple/30 hover:border-ssj4-purple/60">
+          <div class="w-14 h-14 rounded-full bg-ssj4-purple/20 flex items-center justify-center mb-6">
+            <i class="fa fa-tachometer text-2xl text-ssj4-gold"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">极限速度</h3>
+          <p class="text-gray-400">
+            速度达到了难以想象的境界，能够在瞬间移动到宇宙的任何角落，甚至可以穿越时空。
+          </p>
+        </div>
+        
+        <!-- 能力卡片3 -->
+        <div class="card bg-ssj4-black/50 backdrop-blur-sm rounded-xl p-6 border border-ssj4-purple/30 hover:border-ssj4-purple/60">
+          <div class="w-14 h-14 rounded-full bg-ssj4-purple/20 flex items-center justify-center mb-6">
+            <i class="fa fa-shield text-2xl text-ssj4-gold"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">超强防御</h3>
+          <p class="text-gray-400">
+            身体强度大幅提升，能够承受宇宙级别的攻击，甚至可以徒手抵挡能量波。
+          </p>
+        </div>
+        
+        <!-- 能力卡片4 -->
+        <div class="card bg-ssj4-black/50 backdrop-blur-sm rounded-xl p-6 border border-ssj4-purple/30 hover:border-ssj4-purple/60">
+          <div class="w-14 h-14 rounded-full bg-ssj4-purple/20 flex items-center justify-center mb-6">
+            <i class="fa fa-hand-rock-o text-2xl text-ssj4-gold"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">究极格斗术</h3>
+          <p class="text-gray-400">
+            战斗技巧和反应速度达到了新的高度，能够轻松应对任何对手的攻击并反击。
+          </p>
+        </div>
+        
+        <!-- 能力卡片5 -->
+        <div class="card bg-ssj4-black/50 backdrop-blur-sm rounded-xl p-6 border border-ssj4-purple/30 hover:border-ssj4-purple/60">
+          <div class="w-14 h-14 rounded-full bg-ssj4-purple/20 flex items-center justify-center mb-6">
+            <i class="fa fa-heartbeat text-2xl text-ssj4-gold"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">能量恢复</h3>
+          <p class="text-gray-400">
+            拥有快速恢复体力和能量的能力，即使在长时间战斗中也能保持巅峰状态。
+          </p>
+        </div>
+        
+        <!-- 能力卡片6 -->
+        <div class="card bg-ssj4-black/50 backdrop-blur-sm rounded-xl p-6 border border-ssj4-purple/30 hover:border-ssj4-purple/60">
+          <div class="w-14 h-14 rounded-full bg-ssj4-purple/20 flex items-center justify-center mb-6">
+            <i class="fa fa-star text-2xl text-ssj4-gold"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">潜力全开</h3>
+          <p class="text-gray-400">
+            能够完全释放赛亚人的潜在能力，战斗力可以在战斗中不断提升，突破自身极限。
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 装饰元素 -->
+    <div class="absolute bottom-0 left-0 w-full h-1/2 bg-ssj4-purple/5 blur-3xl -z-10"></div>
+  </section>
 
-    <h3>我的技能</h3>
-    <ul>
-        <li>Python 编程</li>
-        <li>数据分析</li>
-        <li>数据挖掘</li>
-    </ul>
+  <!-- 变身过程 -->
+  <section id="transformation" class="py-24 bg-ssj4-black relative overflow-hidden">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-white mb-4">变身过程</h2>
+        <div class="w-24 h-1 bg-ssj4-gold mx-auto mb-8"></div>
+        <p class="text-gray-400 max-w-3xl mx-auto">
+          超级赛亚人四的变身过程极为特殊，与传统的超级赛亚人变身有着本质的区别
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- 步骤1 -->
+        <div class="relative overflow-hidden rounded-xl group">
+          <div class="absolute inset-0 bg-gradient-to-t from-ssj4-black to-transparent z-10"></div>
+          <img src="lcz1.jpg" alt="步骤1：黄金大猩猩" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+            <div class="w-12 h-12 rounded-full bg-ssj4-gold/20 flex items-center justify-center mb-3">
+              <span class="text-ssj4-gold font-bold">1</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">黄金大猩猩</h3>
+            <p class="text-gray-400 text-sm mt-1">首先需要变成大猩猩形态，在满月或布鲁兹波的作用下</p>
+          </div>
+        </div>
+        
+        <!-- 步骤2 -->
+        <div class="relative overflow-hidden rounded-xl group">
+          <div class="absolute inset-0 bg-gradient-to-t from-ssj4-black to-transparent z-10"></div>
+          <img src="lcz2.jpg" alt="步骤2：恢复理智" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+            <div class="w-12 h-12 rounded-full bg-ssj4-gold/20 flex items-center justify-center mb-3">
+              <span class="text-ssj4-gold font-bold">2</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">恢复理智</h3>
+            <p class="text-gray-400 text-sm mt-1">在大猩猩形态下保持理智，不被野性控制</p>
+          </div>
+        </div>
+        
+        <!-- 步骤3 -->
+        <div class="relative overflow-hidden rounded-xl group">
+          <div class="absolute inset-0 bg-gradient-to-t from-ssj4-black to-transparent z-10"></div>
+          <img src="lcz.jpg" alt="步骤3：能量爆发" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+            <div class="w-12 h-12 rounded-full bg-ssj4-gold/20 flex items-center justify-center mb-3">
+              <span class="text-ssj4-gold font-bold">3</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">能量爆发</h3>
+            <p class="text-gray-400 text-sm mt-1">体内的超级赛亚人能量与大猩猩形态的力量融合</p>
+          </div>
+        </div>
+        
+        <!-- 步骤4 -->
+        <div class="relative overflow-hidden rounded-xl group">
+          <div class="absolute inset-0 bg-gradient-to-t from-ssj4-black to-transparent z-10"></div>
+          <img src="lcz.jpg" alt="步骤4：超级赛亚人四" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+            <div class="w-12 h-12 rounded-full bg-ssj4-gold/20 flex items-center justify-center mb-3">
+              <span class="text-ssj4-gold font-bold">4</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">完成变身</h3>
+            <p class="text-gray-400 text-sm mt-1">最终形态变化完成，成为超级赛亚人四</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-16 text-center">
+        <blockquote class="max-w-3xl mx-auto italic text-gray-300">
+          "这不仅仅是力量的提升，更是赛亚人本性的觉醒。超级赛亚人四代表了我们最原始、最强大的战斗形态。"
+        </blockquote>
+        <p class="mt-4 text-ssj4-gold">— 孙悟空</p>
+      </div>
+    </div>
+    
+    <!-- 装饰背景 -->
+    <div class="absolute top-0 left-0 w-full h-full bg-[url('lcz.jpg')] bg-cover bg-center opacity-5 blur-3xl -z-10"></div>
+  </section>
 
-    <h3>我的学习计划</h3>
-    <ol>
-        <li>学习 HTML 基础</li>
-        <li>学习 CSS 样式</li>
-        <li>学习 JavaScript 交互</li>
-        <li>完成一个完整的网站项目</li>
-    </ol>
+  <!-- 图库部分 -->
+  <section id="gallery" class="py-24 bg-gradient-ssj4 relative">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-white mb-4">超级赛亚人四图库</h2>
+        <div class="w-24 h-1 bg-ssj4-gold mx-auto mb-8"></div>
+        <p class="text-gray-400 max-w-3xl mx-auto">
+          欣赏超级赛亚人四的精彩瞬间和震撼画面
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 图片1 -->
+        <div class="gallery-img overflow-hidden rounded-xl shadow-lg">
+          <img src="lcz.jpg" alt="超级赛亚人四战斗姿态" class="w-full h-72 object-cover">
+        </div>
+        
+        <!-- 图片2 -->
+        <div class="gallery-img overflow-hidden rounded-xl shadow-lg">
+          <img src="lcz1.jpg" alt="超级赛亚人四特写" class="w-full h-72 object-cover">
+        </div>
+        
+        <!-- 图片3 -->
+        <div class="gallery-img overflow-hidden rounded-xl shadow-lg">
+          <img src="lcz2.jpg" alt="超级赛亚人四能量爆发" class="w-full h-72 object-cover">
+        </div>
+        
+        <!-- 图片4 -->
+        <div class="gallery-img overflow-hidden rounded-xl shadow-lg">
+          <img src="lcz.jpg" alt="超级赛亚人四与贝吉塔" class="w-full h-72 object-cover">
+        </div>
+        
+        <!-- 图片5 -->
+        <div class="gallery-img overflow-hidden rounded-xl shadow-lg">
+          <img src="lcz1.jpg" alt="超级赛亚人四悟空" class="w-full h-72 object-cover">
+        </div>
+        
+        <!-- 图片6 -->
+        <div class="gallery-img overflow-hidden rounded-xl shadow-lg">
+          <img src="lcz2.jpg" alt="超级赛亚人四全身像" class="w-full h-72 object-cover">
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <button class="px-8 py-3 bg-transparent border-2 border-ssj4-gold text-ssj4-gold hover:bg-ssj4-gold/10 font-bold rounded-full transition-all duration-300 transform hover:scale-105">
+          加载更多图片
+        </button>
+      </div>
+    </div>
+    
+    <!-- 装饰元素 -->
+    <div class="absolute bottom-0 right-0 w-1/2 h-1/2 bg-ssj4-purple/5 blur-3xl -z-10"></div>
+  </section>
 
-    <h3>我喜欢的网站</h3>
-    <p>以下是一些我经常访问的网站:</p>
-    <ul>
-        <li><a href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a> - 学习和娱乐的天堂</li>
-        <li><a href="https://douyin.com/" target="_blank">抖音</a> - 发现新奇，记录生活</li>
-    </ul>
+  <!-- 页脚 -->
+  <footer class="bg-ssj4-black py-12 border-t border-ssj4-purple/30">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold text-ssj4-gold mb-4 font-orbitron">超级赛亚人四</h3>
+          <p class="text-gray-400 mb-6">
+            探索赛亚人最强大的变身形态，体验超越极限的力量。
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-ssj4-gold transition-colors">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-ssj4-gold transition-colors">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-ssj4-gold transition-colors">
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-ssj4-gold transition-colors">
+              <i class="fa fa-youtube-play"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">快速链接</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="text-gray-400 hover:text-ssj4-gold transition-colors">介绍</a></li>
+            <li><a href="#powers" class="text-gray-400 hover:text-ssj4-gold transition-colors">能力</a></li>
+            <li><a href="#transformation" class="text-gray-400 hover:text-ssj4-gold transition-colors">变身</a></li>
+            <li><a href="#gallery" class="text-gray-400 hover:text-ssj4-gold transition-colors">图库</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">订阅更新</h4>
+          <p class="text-gray-400 mb-4">获取最新的龙珠资讯和超级赛亚人四的相关内容</p>
+          <form class="flex">
+            <input type="email" placeholder="输入您的邮箱" class="px-4 py-2 bg-ssj4-dark border border-ssj4-purple/50 rounded-l-full focus:outline-none focus:border-ssj4-gold flex-grow">
+            <button type="submit" class="px-4 py-2 bg-ssj4-purple hover:bg-ssj4-purple-light text-white rounded-r-full transition-colors">
+              订阅
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="border-t border-ssj4-purple/30 mt-12 pt-8 text-center">
+        <p class="text-gray-500">© 2025 超级赛亚人四官方网站. 保留所有权利.</p>
+      </div>
+    </div>
+  </footer>
 
-    <h3>联系我</h3>
-    <table>
-        <tr>
-            <th>联系方式</th>
-            <th>内容</th>
-        </tr>
-        <tr>
-            <td>邮箱</td>
-            <td>2786851085@qq.com</td>
-        </tr>
-        <tr>
-            <td>电话</td>
-            <td>157615663212</td>
-        </tr>
-        <tr>
-            <td>地址</td>
-            <td>重庆</td>
-        </tr>
-    </table>
-
-    <h3>给我留言</h3>
-    <form>
-        <p>你的名字:</p>
-        <input type="text" name="name" placeholder="请输入你的名字" required>
-
-        <p>你的邮箱:</p>
-        <input type="email" name="email" placeholder="请输入你的邮箱" required>
-
-        <p>留言内容:</p>
-        <textarea name="message" rows="5" cols="30" placeholder="请输入留言内容" required></textarea>
-
-        <input type="submit" value="提交留言">
-    </form>
-</div>
-
-<footer>
-    版权所有 © 2026 刘才志 | 最后更新:2026年1月
-</footer>
-
+  <!-- JavaScript -->
+  <script>
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-ssj4-black/90', 'shadow-lg');
+        navbar.classList.remove('bg-ssj4-black/80');
+      } else {
+        navbar.classList.add('bg-ssj4-black/80');
+        navbar.classList.remove('bg-ssj4-black/90', 'shadow-lg');
+      }
+    });
+    
+    // 移动端菜单切换
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      if (menuBtn.innerHTML.includes('bars')) {
+        menuBtn.innerHTML = '<i class="fa fa-times text-xl"></i>';
+      } else {
+        menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+      }
+    });
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          // 关闭移动菜单（如果打开）
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+          }
+          
+          // 滚动到目标位置
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // 视差滚动效果
+    window.addEventListener('scroll', () => {
+      const parallaxElements = document.querySelectorAll('.parallax-layer');
+      parallaxElements.forEach(element => {
+        const speed = element.getAttribute('data-speed') || 50;
+        const yPos = -(window.scrollY / speed);
+        element.style.transform = `translateZ(-50px) scale(1.05) translateY(${yPos}px)`;
+      });
+    });
+    
+    // 图片懒加载
+    document.addEventListener("DOMContentLoaded", function() {
+      const lazyImages = document.querySelectorAll(".gallery-img img");
+      
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.classList.add('opacity-100');
+            img.classList.remove('opacity-0');
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+      
+      lazyImages.forEach(img => {
+        imageObserver.observe(img);
+      });
+    });
+  </script>
 </body>
 </html>
